@@ -1,6 +1,7 @@
-import { parseISO, format } from 'date-fns'
+import { parseISO, format } from 'date-fns';
+import ru from "date-fns/locale/ru";;
 
 export default function Date({ dateString }) {
   const date = parseISO(dateString)
-  return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>
+  return <time dateTime={dateString}>{format(date, 'd MMMM, yyyy', {locale: ru})}</time>
 }
